@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create A Banner</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="reactBanner.css">
+  </head>
+  <body>
+    <center><div id="header"></div></center>
+
+    <center><div class="forms">
+      <div class="spacing">
+        <div id="form"></div>
+      </div>
+      <div class="spacing">
+        <div id="form2"></div>
+      </div>
+    </div></center>
+
+
+
+
+<!-- The start of the React JS code -->
+    <script type="text/babel">
+    // This is the StockX image on top of the page considered to be a component
+      class HeaderImage extends React.Component{
+        render(){
+          return(
+            <div>
+              <img className="header"src="https://d1zx4fn8ox8446.cloudfront.net/filemanager.rboxfile/2e0c7b9571dc4be58923dc698ca68d09/stockx-homepage-logo.png"/>
+            </div>
+          )
+        }
+      };
+// This is allows the component to get displayed on the screen
+      ReactDOM.render(
+        <HeaderImage />,
+        document.getElementById('header')
+      );
+
+// This is the form on the page where the user would upload imges
+      class Form extends React.Component{
+        render(){
+          return(
+            <div>
+              <form className="form-fields">
+                <h3>Web Image:</h3>
+                  <input type="file" ref="img" />
+                <h3>Web Tiles:</h3>
+                  <input type="file" ref="img" />
+                <h3>Mobile Image:</h3>
+                  <input type="file" ref="img" />
+                <h3>Mobile Tiles:</h3>
+                  <input type="file" ref="img" />
+                <div className="submitButton">
+                  <button>Submit</button>
+                </div>
+              </form>
+            </div>
+          )
+        }
+      };
+
+// Once again this it what allows the above code to be displayed
+      ReactDOM.render(
+        <Form />,
+        document.getElementById('form')
+      );
+
+      class BannerForm extends React.Component {
+        render(){
+          return(
+            <div>
+              <form className="form-fields">
+                <h3>Banner Name:</h3>
+                  <input type="text" ref="textarea" />
+                <h3>Hex Color Left:</h3>
+                  <input type="text" ref="textarea" />
+                <h3>Hex Color Right</h3>
+                  <input type="text" ref="textarea" />
+                <h3>Link Urls:</h3>
+                  <input type="text" ref="textarea" />
+                <h3>Vertical:</h3>
+                  <input type="text" ref="textarea" />
+                <h3>Start Date & Time:</h3>
+                  <input type="text" ref="textarea" />
+                <h3>End Date & Time:</h3>
+                  <input type="text" ref="textarea" />
+                <div className="submitButton">
+                  <button>Submit</button>
+                </div>
+              </form>
+            </div>
+          )
+        }
+      };
+
+      ReactDOM.render(
+        <BannerForm />,
+        document.getElementById('form2')
+      );
+
+    </script>
+
+  </body>
+</html>
